@@ -26,7 +26,7 @@ export default function Footer() {
         <div className="lg:col-span-1 space-y-5">
           <Image
             alt="logo"
-            src="/logos/inverse.png"
+            src="https://github.com/tinochiduku/campusconnect/blob/master/public/logos/inverse.png"
             className="h-10 w-auto object-contain"
             width={0}
             height={0}

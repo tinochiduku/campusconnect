@@ -24,7 +24,7 @@ export default function Home() {
         <section className="min-h-[90vh] relative flex flex-col justify-center mx-auto py-24">
             <Image
                 alt="hero image"
-                src="/hero.avif"
+                src="https://github.com/tinochiduku/campusconnect/blob/master/public/logos/hero.avif"
                 className="absolute object-cover w-full h-full"
                 width={0}
                 height={0}

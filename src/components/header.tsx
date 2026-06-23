@@ -31,7 +31,7 @@ export default function Header() {
                 <div>
                     <Image
                         alt="logo"
-                        src="/logos/inverse.png"
+                        src="https://github.com/tinochiduku/campusconnect/blob/master/public/logos/inverse.png"
                         className="w-full h-12"
                         width={0}
                         height={0}
