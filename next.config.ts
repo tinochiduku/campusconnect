@@ -1,18 +1,19 @@
 import type { NextConfig } from "next";
-const isProd = process.env.NODE_ENV === 'production';
-const repoName = 'campusconnect';
-
 
 const nextConfig: NextConfig = {
-    typescript : {
+  typescript : {
     ignoreBuildErrors: true
   },
-  output: 'export', // Forces Next.js 16 to build static HTML/CSS/JS assets
-  basePath: isProd ? `/${repoName}` : '', // Prepends repo name to URLs for production
-  assetPrefix: isProd ? `/${repoName}/` : '', // Prepends repo name to asset pipelines
-  images: {
-    unoptimized: true, // Required because GitHub Pages does not support Next.js dynamic image optimization
-  },
+ output: 'export',
+ images: {
+  unoptimized: true
+ }
+  // images: {
+  //   loader: 'custom',
+  //   loaderFile: './image-loader.ts',
+  //   deviceSizes: [640, 768, 1024, 1280, 1536, 1920],
+  //   imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
+  // },
 };
 
 export default nextConfig;
