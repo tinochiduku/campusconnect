@@ -76,7 +76,7 @@ export const MobileNav = ({nav, pathname, toggleNav}: any) => {
                 </button>
             </div>
             <ul className="flex flex-col items-center gap-4 ">
-                {nav.map(({title, nav}) => (
+                {nav.map(({title, nav}: any) => (
                     <li key={title}>
                         <Link className={`font-medium ${pathname === nav ? 'text-(--accent)' : ''}`} href={nav}>
                             {title}
