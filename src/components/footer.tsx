@@ -4,6 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { IconBrandInstagram, IconBrandLinkedin, IconBrandX, IconPhone, IconMail, IconMapPin } from "@tabler/icons-react"
 import { _nav } from "./header"
+import { logo } from "@/app/images/images"
 
 const services = [
   "University Applications",
@@ -26,7 +27,7 @@ export default function Footer() {
         <div className="lg:col-span-1 space-y-5">
           <Image
             alt="logo"
-            src="https://github.com/tinochiduku/campusconnect/blob/master/public/logos/inverse.png"
+            src={logo}
             className="h-10 w-auto object-contain"
             width={0}
             height={0}

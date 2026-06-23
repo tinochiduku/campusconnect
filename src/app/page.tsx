@@ -2,6 +2,7 @@ import Link from "next/link"
 import { IconArrowRight, IconSchool, IconBuilding, IconUsers } from "@tabler/icons-react"
 import { FaCcVisa } from 'react-icons/fa6'
 import Image from "next/image"
+import { hero } from "./images/images"
 
 const stats = [
   { value: "9+", label: "Study Destinations" },
@@ -24,7 +25,7 @@ export default function Home() {
         <section className="min-h-[90vh] relative flex flex-col justify-center mx-auto py-24">
             <Image
                 alt="hero image"
-                src="https://github.com/tinochiduku/campusconnect/blob/master/public/logos/hero.avif"
+                src={hero}
                 className="absolute object-cover w-full h-full"
                 width={0}
                 height={0}

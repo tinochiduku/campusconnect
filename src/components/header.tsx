@@ -1,5 +1,6 @@
 'use client'
 
+import { logo } from "@/app/images/images"
 import { IconMenu, IconX } from "@tabler/icons-react"
 import Image from "next/image"
 import Link from "next/link"
@@ -31,7 +32,7 @@ export default function Header() {
                 <div>
                     <Image
                         alt="logo"
-                        src="https://github.com/tinochiduku/campusconnect/blob/master/public/logos/inverse.png"
+                        src={logo}
                         className="w-full h-12"
                         width={0}
                         height={0}
