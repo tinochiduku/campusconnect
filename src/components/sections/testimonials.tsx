@@ -43,7 +43,7 @@ const testimonials = [
     },
 ]
 
-const PER_SLIDE = 3
+const PER_SLIDE = 3 
 
 export default function Testimonials() {
     const slideCount = Math.ceil(testimonials.length / PER_SLIDE)
