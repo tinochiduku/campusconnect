@@ -49,7 +49,7 @@ export default function Testimonials() {
     const slideCount = Math.ceil(testimonials.length / PER_SLIDE)
     const [slide, setSlide] = useState(0)
 
-    const goTo = (i) => setSlide((i + slideCount) % slideCount)
+    const goTo = (i: any) => setSlide((i + slideCount) % slideCount)
 
     return (
         <div className="container relative md:my-24 my-16 mx-auto">
