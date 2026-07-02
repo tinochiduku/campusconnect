@@ -1,23 +1,28 @@
 'use client'
 
-import Image from "next/image"
 import Link from "next/link"
 import { IconBrandInstagram, IconBrandLinkedin, IconBrandX, IconPhone, IconMail, IconMapPin } from "@tabler/icons-react"
 import { _nav } from "./header"
-import { logo } from "@/app/images/images"
 
-const services = [
-  "University Applications",
-  "Visa Assistance",
-  "Pre-Departure Support",
-  "Career Mentorship",
-  "Student Community",
-]
-
-const socials = [
+export const socials = [
   { icon: IconBrandInstagram, href: "#" },
   { icon: IconBrandLinkedin, href: "#" },
   { icon: IconBrandX, href: "#" },
+]
+
+export const contact = [
+  {
+    icon: <IconMapPin className="size-5" strokeWidth={1.5} />,
+    body: 'Address here'
+  },
+  {
+    icon: <IconPhone className="size-5" strokeWidth={1.5} />,
+    body: 'Phone here'
+  },
+  {
+    icon: <IconMail className="size-5" strokeWidth={1.5} />,
+    body: 'Email Address'
+  },
 ]
 
 export default function Footer() {
@@ -25,14 +30,6 @@ export default function Footer() {
     <footer className="bg-zinc-950 text-white">
       <div className="container mx-auto px-4 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
         <div className="lg:col-span-1 space-y-5">
-          <Image
-            alt="logo"
-            src={logo}
-            className="h-10 w-auto object-contain"
-            width={0}
-            height={0}
-            sizes="100svw"
-          />
           <p className="text-zinc-400 text-sm leading-relaxed">
             Empowering aspiring students to pursue global education opportunities through trusted guidance and meaningful partnerships.
           </p>
@@ -46,11 +43,25 @@ export default function Footer() {
         </div>
 
         <div>
-          <p className="text-xs uppercase tracking-widest text-(--accent) mb-5">Navigation</p>
+          <p className="tracking-widest font-semibold mb-5">Contact</p>
+          <ul className="space-y-3">
+            {contact.map((s, i) => (
+              <li className="flex items-center gap-3" key={i}>
+                {s.icon}
+                <Link href="/services" className="text-zinc-400 text-sm hover:text-white transition-colors">
+                  {s.body}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <p className="tracking-widest font-semibold mb-5">Company</p>
           <ul className="space-y-3">
             {_nav.map(({ title, nav }) => (
               <li key={title}>
-                <Link href={nav} className="text-zinc-400 text-sm hover:text-white transition-colors">
+                <Link href={nav} className="text-zinc-400 hover:text-white transition-colors">
                   {title}
                 </Link>
               </li>
@@ -58,42 +69,27 @@ export default function Footer() {
           </ul>
         </div>
 
-        <div>
-          <p className="text-xs uppercase tracking-widest text-(--accent) mb-5">Our Services</p>
-          <ul className="space-y-3">
-            {services.map((s) => (
-              <li key={s}>
-                <Link href="/services" className="text-zinc-400 text-sm hover:text-white transition-colors">
-                  {s}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
 
         <div>
-          <p className="text-xs uppercase tracking-widest text-(--accent) mb-5">Contact</p>
-          <ul className="space-y-4">
-            <li className="flex items-start gap-3 text-sm text-zinc-400">
-              <IconPhone className="size-4 shrink-0 mt-0.5 text-violet-400" />
-              +263 000 000 000
-            </li>
-            <li className="flex items-start gap-3 text-sm text-zinc-400">
-              <IconMail className="size-4 shrink-0 mt-0.5 text-violet-400" />
-              info@campusconnect.co.zw
-            </li>
-            <li className="flex items-start gap-3 text-sm text-zinc-400">
-              <IconMapPin className="size-4 shrink-0 mt-0.5 text-violet-400" />
-              Harare, Zimbabwe
-            </li>
-          </ul>
+          <p className="tracking-widest font-semibold mb-5">Newsletter</p>
+          <div className="space-y-4">
+              <p>Sign up and receive the latest tips via email</p>
+              <div className="flex flex-col gap-4">
+                <label>Write your email <span className="sup text-red-500">*</span></label>
+                <div className="relative flex items-center w-full">
+                  <IconMail className="absolute left-2 size-6" strokeWidth={1.5} /> 
+                  <input className="py-2 pl-10 border rounded w-full" placeholder="Email" />
+                </div>
+              <button className="font-semibold rounded bg-(--primary) px-4 py-2"> Subscribe </button>
+              </div>
+          </div>
         </div>
       </div>
 
       <div className="border-t border-zinc-800">
         <div className="container mx-auto px-4 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-zinc-500 text-xs">© {new Date().getFullYear()} Campus Connect International. All rights reserved.</p>
-          <p className="text-xs text-zinc-600 italic">Dream Beyond Borders.</p>
+          <Link href="https://www.motive8creatives.co.zw/" className="text-xs text-zinc-600 italic">Made by Motiv8Creatives</Link>
         </div>
       </div>
     </footer>

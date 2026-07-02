@@ -1,3 +1,5 @@
+import About from "@/components/sections/about"
+
 const values = [
   { title: "Integrity", desc: "Honesty, transparency, and ethical guidance in every process." },
   { title: "Student Centred", desc: "Personalised guidance tailored to individual goals and journeys." },
@@ -14,20 +16,13 @@ const audience = [
   "Students Seeking Mentorship",
 ]
 
-export default function About() {
+export default function Page() {
   return (
     <main className="bg-white text-(--primary)">
-      <section className="py-24 container mx-auto px-4">
-        <p className="text-sm uppercase tracking-widest text-(--accent) mb-4">About Us</p>
-        <h1 className="text-5xl md:text-6xl font-semibold leading-tight max-w-3xl mb-8">
-          We help students build futures <span className="text-violet-600">without limits.</span>
-        </h1>
-        <p className="text-lg text-zinc-500 max-w-2xl">
-          Founded with the vision of connecting aspiring students to world-class educational opportunities, Campus Connect International provides expert guidance and comprehensive support throughout the entire study abroad journey.
-        </p>
-      </section>
 
-      <section className="py-16 bg-zinc-950 text-white">
+      <About />
+
+      <section className="py-16 bg-zinc-950 text-white mt-24">
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-16">
           <div>
             <p className="text-sm uppercase tracking-widest text-(--accent) mb-3">Mission</p>
