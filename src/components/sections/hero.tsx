@@ -52,7 +52,7 @@ export default function Hero() {
 
     const current = headings[index]
 
-    const goTo = (i) => {
+    const goTo = (i: any) => {
         if (i === index) return
         setBgVisible(false)
         setTextVisible(false)
